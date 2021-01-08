@@ -1,5 +1,7 @@
 from typing import List
 
+# TODO(cphurley): Add comments.
+
 class Node:
 
     def __init__(self, key):
@@ -36,6 +38,7 @@ class Node:
         return tallest_height + 1
 
     def list_given_level(self, level) -> List:
+        # TODO(cphurley): Start level index at 0.
         if level == 1:
             return[self.data]
         if level == 2:
@@ -66,7 +69,6 @@ class TreeTests(unittest.TestCase):
 
         '''
         
-        
         self.root = Node('a')
         self.root.children = [Node('b'), Node('c')]
         self.root.children[0].children = [Node('d'), Node('e'), Node('f')]
@@ -84,7 +86,6 @@ class TreeTests(unittest.TestCase):
     def test_calc_height(self):
         self.assertEqual(self.root.calc_height(), 5)
         
-
     def test_print_given_level(self):
         self.assertEqual(self.root.list_given_level(1), ['a'])
         self.assertEqual(self.root.list_given_level(2), ['b', 'c'])
